@@ -5,7 +5,7 @@ import swappingSchemes.FifoCache
 
 class TestingFifoCache extends WordSpec{
   val testCache = new FifoCache [String, Long]//create cache
-  //fill cache
+  //fill cache with 5 strings
   testCache.insertPair("string1", 1)
   testCache.insertPair("string2", 2)
   testCache.insertPair("string3", 3)
@@ -16,7 +16,7 @@ class TestingFifoCache extends WordSpec{
     "cached" should {
       assert(testCache.getValueIfExists("string1").isDefined)
       assert(testCache.getValueIfExists("string3").isDefined)
-      println("All tests for cached keys pass")
+      println("All tests for keys that are cached pass")
     }
   }
   "not cached" should {
@@ -24,7 +24,7 @@ class TestingFifoCache extends WordSpec{
     testCache.insertPair("string7", 7)
     assert(testCache.getValueIfExists("string1").isEmpty)
     assert(testCache.getValueIfExists("string2").isEmpty)
-    println("All tests for keys not cached pass")
+    println("All tests for keys that are not cached pass")
   }
-  println("All tests for Fifo pass")
+  println("All tests for FIFO pass")
 }
