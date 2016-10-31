@@ -10,7 +10,7 @@ trait CacheTemplate[Key, Value] {
   def addPair(key: Key, value: Value) = cache += (key -> value)
   def insertPair(key: Key, value: Value) = {
     if (cache.size == size) {
-      cache -= cache.keysIterator.next()
+      cache = cache - cache.keysIterator.next()
     }
     addPair(key, value)
   }
