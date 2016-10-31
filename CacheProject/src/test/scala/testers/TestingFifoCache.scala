@@ -16,7 +16,7 @@ class TestingFifoCache extends WordSpec{
     "cached" should {
       assert(testCache.getValueIfExists("string1").isDefined)
       assert(testCache.getValueIfExists("string3").isDefined)
-      println("All tests for keys that are cached pass")
+      println("All tests for keys that are cached have passed")
     }
   }
   "not cached" should {
@@ -24,7 +24,7 @@ class TestingFifoCache extends WordSpec{
     testCache.insertPair("string7", 7)
     assert(testCache.getValueIfExists("string1").isEmpty)
     assert(testCache.getValueIfExists("string2").isEmpty)
-    println("All tests for keys that are not cached pass")
+    println("All tests for keys that are not cached have passed")
   }
   println("All tests for FIFO pass")
 }
